@@ -1,0 +1,38 @@
+<joblist>
+  <job>
+    <description>Check the status of anvils</description>
+    <dispatch>
+      <excludePrecedence>true</excludePrecedence>
+      <keepgoing>true</keepgoing>
+      <rankOrder>ascending</rankOrder>
+      <threadcount>1</threadcount>
+    </dispatch>
+    <executionEnabled>true</executionEnabled>
+    <group>web</group>
+    <id>b0661686-0535-417f-bd57-385131cf4dc3</id>
+    <loglevel>INFO</loglevel>
+    <multipleExecutions>true</multipleExecutions>
+    <name>Status</name>
+    <nodeFilterEditable>true</nodeFilterEditable>
+    <nodefilters>
+      <filter>tags: www</filter>
+    </nodefilters>
+    <nodesSelectedByDefault>true</nodesSelectedByDefault>
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='true' strategy='node-first'>
+      <command>
+        <description>Check pid</description>
+        <errorhandler>
+          <exec>echo "Pid file not found. Continuing..."</exec>
+        </errorhandler>
+        <node-step-plugin type='nixy-file-contains'>
+          <configuration>
+            <entry key='file' value='${node.anvils:server-dir}/pid' />
+            <entry key='pattern' value='&apos;^[0-9]*$&apos;' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+    </sequence>
+    <uuid>b0661686-0535-417f-bd57-385131cf4dc3</uuid>
+  </job>
+</joblist>
