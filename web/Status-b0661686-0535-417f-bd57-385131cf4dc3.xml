@@ -1,6 +1,15 @@
 <joblist>
   <job>
-    <description>Check the status of anvils</description>
+    <description><![CDATA[Check the status of anvils
+
+---
+
+ NE | SE | NW 
+-------|------|----------
+   1   |  4   |   10
+  ME   |  GA  |   WA
+ Blue  | Red  | Green
+  [blue/green config]]]></description>
     <dispatch>
       <excludePrecedence>true</excludePrecedence>
       <keepgoing>true</keepgoing>
