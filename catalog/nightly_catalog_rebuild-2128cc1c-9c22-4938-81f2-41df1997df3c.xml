@@ -11,7 +11,8 @@
 
 ---
 
-some new stuff]]></description>
+some new stuff
+and one more line.]]></description>
     <dispatch>
       <excludePrecedence>true</excludePrecedence>
       <keepgoing>true</keepgoing>
